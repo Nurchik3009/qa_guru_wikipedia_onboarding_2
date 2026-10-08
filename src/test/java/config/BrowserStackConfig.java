@@ -1,7 +1,6 @@
 package config;
 
 import org.aeonbits.owner.Config;
-import org.aeonbits.owner.Config.Key;
 
 @Config.LoadPolicy(Config.LoadType.MERGE)
 @Config.Sources({
@@ -45,4 +44,24 @@ public interface BrowserStackConfig extends Config {
 
     @Key("build.name")
     String buildName();
+
+    @Key("emulation.deviceName")
+    @DefaultValue("Pixel 4")
+    String emulationDeviceName();
+
+    @Key("emulation.platformVersion")
+    @DefaultValue("11.0")
+    String emulationPlatformVersion();
+
+    @Key("emulation.appiumUrl")
+    @DefaultValue("http://localhost:4723/wd/hub")
+    String emulationAppiumUrl();
+
+    @Key("emulation.appUrl")
+    @DefaultValue("https://github.com/wikimedia/apps-android-wikipedia/releases/download/latest/app-alpha-universal-release.apk")
+    String emulationAppUrl();
+
+    @Key("emulation.appVersion")
+    @DefaultValue("app-alpha-universal-release.apk")
+    String emulationAppVersion();
 }
